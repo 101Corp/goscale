@@ -13,6 +13,7 @@ const server = http.createServer((req, res) => {
   }, (response) => {
     console.log('statusCode:', response.statusCode);
     console.log('headers:', response.headers);
+    headers['X-Frame-Options'] = "*"
   
     response.on('data', (data) => {
       res.write(data)
