@@ -1,4 +1,5 @@
 # starter-micro-api
+this website is actually kinda good
 
 This is the simplest possible nodejs api using the base http library that responds to any request with: 
 ```
