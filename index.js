@@ -18,7 +18,9 @@ const server = http.createServer((req, res) => {
       res.write(data)
     });
     response.on('end', () => {
-      res.writeHead(200, {'Content-Type': 'text/plain', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': '*', 'X-Frame-Options': '*'});
+      res.writeHead(200, {'Access-Control-Allow-Origin': '*'});
+      res.writeHead(200, {'Access-Control-Allow-Headers': '*'});
+      res.writeHead(200, {'X-Frame-Options': '*'});
       res.end();
     });
 }); request.on('error', (error) => {console.error(error);}); request.end();
