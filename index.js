@@ -13,12 +13,12 @@ const server = http.createServer((req, res) => {
   }, (response) => {
     console.log('statusCode:', response.statusCode);
     console.log('headers:', response.headers);
-    headers['X-Frame-Options'] = "*"
   
     response.on('data', (data) => {
       res.write(data)
     });
     response.on('end', () => {
+      res.writeHead(200, {'Content-Type': 'text/plain', 'Access-Control-Allow-Origin': '*', 'Access-Control-Allow-Headers': '*', 'X-Frame-Options': '*'});
       res.end();
     });
 }); request.on('error', (error) => {console.error(error);}); request.end();
